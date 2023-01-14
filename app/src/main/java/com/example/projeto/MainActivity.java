@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +18,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     ArrayList<Product> products;
     AdapterMain adaptador;
-    public static String user = "asd@asd";
+    public static String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         products = new ArrayList<Product>();
 
+        Intent it = getIntent();
+        user = it.getStringExtra("user");
 
         RecyclerView rvProductsMain = findViewById(R.id.mainListRecycler);
         adaptador = new AdapterMain(products);
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getProductsFromApi() {
-
         for (int i = 1; i <= 7; i++) {
             Call<Product> call = RetrofitClient.getInstance().getMyApi().getProduct(i);
             call.enqueue(new Callback<Product>() {
@@ -57,19 +57,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
     }
 
     public void LaunchShopCart(View view) {
-        Intent it = new Intent(this, ShoppingCart.class);
+        Intent it = new Intent(this, ShoppingCartActivity.class);
         startActivity(it);
     }
 
     public void goToProfile(View view) {
         Intent it;
-        if (user != "") {
-            it = new Intent(this, Profile.class);
+        if (user instanceof String) {
+            it = new Intent(this, ProfileActivity.class);
         } else {
-            it = new Intent(this, Login.class);
+            it = new Intent(this, LoginActivity.class);
         }
         startActivity(it);
     }

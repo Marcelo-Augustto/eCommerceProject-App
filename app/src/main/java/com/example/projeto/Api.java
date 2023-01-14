@@ -22,6 +22,9 @@ public interface Api {
     @GET("get-cart-product-by-user/{user}/{prodId}")
     Call<CartProduct> getCart(@Path("user") String user, @Path("prodId") int prodId);
 
+    @GET("get-user-by-email/{email}")
+    Call<User> getUser(@Path("email") String email);
+
     @FormUrlEncoded
     @POST("add-to-cart")
     Call<Response> addToCart(@FieldMap HashMap<String, String> data);
@@ -29,4 +32,9 @@ public interface Api {
     @FormUrlEncoded
     @POST("change-cart")
     Call<Response> removeProduct(@FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
+    @POST("login")
+    Call<Response> login(@FieldMap HashMap<String, String> data);
+
 }

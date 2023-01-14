@@ -17,13 +17,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ShoppingCart extends AppCompatActivity {
+public class ShoppingCartActivity extends AppCompatActivity {
     ArrayList<CartProduct> products;
     ShopcartAdapter adaptador;
-    String user = "asd@asd";
     float totalPrice = 0.00F;
     TextView tvTotalPrice;
-    private static ShoppingCart instance;
+    private static ShoppingCartActivity instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,7 @@ public class ShoppingCart extends AppCompatActivity {
 
     private void getCartFromApi() {
         for (int i = 1; i <= 20; i++) {
-            Call<CartProduct> call = RetrofitClient.getInstance().getMyApi().getCart(user, i);
+            Call<CartProduct> call = RetrofitClient.getInstance().getMyApi().getCart(MainActivity.user, i);
             call.enqueue(new Callback<CartProduct>() {
                 @Override
                 public void onResponse(@NonNull Call<CartProduct> call, @NonNull Response<CartProduct> response) {
@@ -66,7 +65,7 @@ public class ShoppingCart extends AppCompatActivity {
         }
     }
 
-    public static ShoppingCart getInstance() {
+    public static ShoppingCartActivity getInstance() {
         return instance;
     }
 

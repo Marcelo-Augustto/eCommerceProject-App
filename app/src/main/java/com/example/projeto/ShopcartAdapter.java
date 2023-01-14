@@ -17,7 +17,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -86,8 +85,8 @@ public class ShopcartAdapter extends RecyclerView.Adapter<ShopcartAdapter.ViewHo
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         Response resp = response.body();
                         Log.v("Status", resp.getStatus());
-                        ShoppingCart.getInstance().finish();
-                        ShoppingCart.getInstance().startActivity(ShoppingCart.getInstance().getIntent());
+                        ShoppingCartActivity.getInstance().finish();
+                        ShoppingCartActivity.getInstance().startActivity(ShoppingCartActivity.getInstance().getIntent());
                     }
 
                     @Override

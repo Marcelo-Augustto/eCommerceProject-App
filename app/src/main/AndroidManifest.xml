@@ -21,16 +21,16 @@
             android:name=".shoppingcart"
             android:exported="false" />
         <activity
-            android:name=".ShoppingCart"
+            android:name=".ShoppingCartActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterUser"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
