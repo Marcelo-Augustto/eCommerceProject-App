@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToProfile(View view) {
         Intent it;
-        if (user instanceof String) {
+        if (user instanceof String && !user.isEmpty()) {
             it = new Intent(this, ProfileActivity.class);
         } else {
             it = new Intent(this, LoginActivity.class);
