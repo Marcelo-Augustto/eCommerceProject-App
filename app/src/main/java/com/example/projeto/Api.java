@@ -37,4 +37,8 @@ public interface Api {
     @POST("login")
     Call<Response> login(@FieldMap HashMap<String, String> data);
 
+    @FormUrlEncoded
+    @POST("register")
+    Call<Response> register(@FieldMap HashMap<String, String> data);
+
 }

@@ -58,7 +58,8 @@
                         android:backgroundTint="#005C5CCC"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:text="Search" />
+                        android:hint="Search"
+                        android:paddingStart="9dp"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -134,6 +135,7 @@
                 android:id="@+id/imageView7"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.933"

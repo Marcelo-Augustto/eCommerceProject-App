@@ -27,7 +27,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carrinho_compras);
+        setContentView(R.layout.activity_shopping_cart);
         products = new ArrayList<CartProduct>();
 
         instance = this;
@@ -71,6 +71,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     public void goToHome(View view) {
         Intent it = new Intent(this, MainActivity.class);
+        it.putExtra("user", MainActivity.user);
         startActivity(it);
     }
 }

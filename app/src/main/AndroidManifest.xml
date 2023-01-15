@@ -27,7 +27,7 @@
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterUser"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"

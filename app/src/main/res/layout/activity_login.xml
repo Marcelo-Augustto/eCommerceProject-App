@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintVertical_bias="0.696"
-        android:onClick="singIn"/>
+        android:onClick="signIn"/>
 
     <TextView
         android:id="@+id/txtLogo"
@@ -57,15 +57,15 @@
         android:layout_height="42dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
+        android:hint="Email"
+        android:textColorHint="#E3C6FF"
         android:textColor="#E3C6FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        android:onClick="clearEditText"/>
+        app:layout_constraintVertical_bias="0.452"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -73,15 +73,15 @@
         android:layout_height="42dp"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="Password"
+        android:hint="Password"
+        android:textColorHint="#E3C6FF"
         android:textColor="#E3C6FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
-        android:onClick="clearEditText"/>
+        app:layout_constraintVertical_bias="0.513"/>
 
     <TextView
         android:id="@+id/ArrowBackReg"
@@ -111,7 +111,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintVertical_bias="0.764"
+        android:onClick="goToSignUp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

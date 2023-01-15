@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -36,15 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void clearEditText(View view) {
-        if (view.getId() == R.id.etEmail) {
-            etEmail.getText().clear();
-        } else if (view.getId() == R.id.etPassword) {
-            etPassword.getText().clear();
-        }
-    }
-
-    public void singIn(View view) {
+    public void signIn(View view) {
         user = new HashMap<String, String>();
         user.put("email", etEmail.getText().toString());
         user.put("password", etPassword.getText().toString());
@@ -54,8 +47,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 Response resp = response.body();
-                Log.v("Status", resp.isLogged().toString());
-                goToHome();
+
+                if (resp.isLogged() instanceof String) {
+                    goToHome();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_LONG).show();
+                }
             }
 
             @Override
@@ -68,6 +65,11 @@ public class LoginActivity extends AppCompatActivity {
     public void goToHome() {
         Intent it = new Intent(this, MainActivity.class);
         it.putExtra("user", etEmail.getText().toString());
+        startActivity(it);
+    }
+
+    public void goToSignUp(View view) {
+        Intent it = new Intent(this, RegisterActivity.class);
         startActivity(it);
     }
 }

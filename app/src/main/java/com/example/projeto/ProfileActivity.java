@@ -46,6 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void goToHome(View view) {
         Intent it = new Intent(this, MainActivity.class);
+        it.putExtra("user", MainActivity.user);
         startActivity(it);
     }
 
